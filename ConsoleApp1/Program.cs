@@ -59,6 +59,9 @@ namespace ConsoleApp1
                 Console.WriteLine("element " + i + " : " + array[i]);
             }
 
+
+
+
         }
     }
 }
