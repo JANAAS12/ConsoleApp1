@@ -15,7 +15,7 @@ namespace Day4._21_1
             private int age; //field
             private int studentId; //field
             public const int MinAge= 18; //constant
-            public const int MaxAge= 20; //constant
+            public const int MaxAge= 40; //constant
 
             public string Name    //property for name
             {
@@ -26,7 +26,17 @@ namespace Day4._21_1
             public int Age //property for age
             {
                 get { return age; }
-                set { age = value; }
+                set
+                {
+                    if (age < MinAge || age > MaxAge)
+                    {
+                        Console.WriteLine("Invalid Age");
+                    }
+                    else
+                    {
+                        age = value;
+                    }
+                }
             }
             public int StudentId {  //property for Id
             
@@ -40,6 +50,7 @@ namespace Day4._21_1
             public Student()    // constractor without parameters
             {
                 name = "";
+              
                 age = 0;
                 studentId = 0;
             }
@@ -47,7 +58,15 @@ namespace Day4._21_1
             public Student(string name,int age,int Id)  // constractor with parameters
             {
                 this.name = name;
-                this.age = age;
+                if (age < MinAge || age > MaxAge)
+                {
+                    Console.WriteLine("Invalid Age");
+                }
+                else
+                {
+                    this.age = age;
+                }
+                
                 this.studentId = Id;
             }
             public void GetDetails()   //method to get details
