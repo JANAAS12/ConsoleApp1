@@ -18,7 +18,48 @@ namespace Day3._20_1
             public bool isBooked;
             public const string hotelName = "Grand Stay Hotel";
 
-            
+            public Room()
+            {
+                roomNumber = 2;
+                roomType = "SINGLE";
+                price = 100;
+                isBooked = true;
+
+            }
+            public Room(int roomNumber, string roomType, double price, bool isBooked)
+            {
+                this.roomNumber = roomNumber;
+                this.roomType = roomType;
+                this.price = price;
+                this.isBooked = isBooked;
+            }
+            public int RoomNumber
+            {
+                get { return roomNumber; }
+                set { roomNumber = value; }
+            }
+            public string RoomType
+            {
+                get { return roomType; }
+                set { roomType = value; }
+            }
+
+            public double Price
+            {
+                get { return price; }
+                set { price = value; }
+            }
+            public bool IsBooked
+            {
+                get { return isBooked; }
+                set { isBooked = value; }
+            }
+            ~Room()
+            {
+                Console.WriteLine("Room object is destroyed");
+            }
+
+
         }
 
         public static void IsOdd(int x)
@@ -100,18 +141,75 @@ namespace Day3._20_1
             }
         }
 
+
+        public static void Triangle2() {
+            int number = 1; 
+
+            for (int i = 1; i <= 5; i++) 
+            {
+                for (int j = 5 - i; j > 0; j--) 
+                {
+                    Console.Write("   "); 
+                }
+
+                for (int q = 1; q <= i; q++) 
+                {
+                    
+                    if (number < 10)
+                    {
+                        Console.Write(" " + number + " ");
+                    }
+                    else
+                    {
+                        Console.Write(number + " ");
+                    }
+                    number++; 
+                }
+
+                Console.WriteLine();
+            }
+        }
+        
+
+
+        public static void jana()
+        {
+            int x = 25;
+            if (x == 5)
+            {
+                Console.WriteLine("Prime");
+
+            }
+
+            for(int i = 2; i < x; i++)
+            {
+                if (x % i == 0)
+                {
+                    Console.WriteLine("Not Prime");
+                    break;
+                }
+                else
+                {
+                    
+                        Console.WriteLine("prime");
+                    break ;
+                    
+                }
+            }
+        }
+
         static void Main(string[] args)
             {
-
-                IsOdd(4);
-                secondsmal(4, -3, 7, 2, 0);
-                Console.WriteLine("enter a number to find factorial");
-                int num = int.Parse(Console.ReadLine());
-                factorial(num);
-                Prime(10, 30);
-                int[] arr = { 3, 1, 4, 1, 5, 9 };
-                Maximum(arr);
-                Tri();
+            Triangle2();
+            IsOdd(4);
+            secondsmal(4, -3, 7, 2, 0);
+            Console.WriteLine("enter a number to find factorial");
+            int num = int.Parse(Console.ReadLine());
+            factorial(num);
+            Prime(10, 30);
+            int[] arr = { 3, 1, 4, 1, 5, 9 };
+            Maximum(arr);
+            Tri();
 
             Room r1 = new Room();
             r1.roomNumber = int.Parse(Console.ReadLine());
